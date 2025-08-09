@@ -4,10 +4,11 @@ import os
 import dotenv
 
 def polish_response_with_gemini(user_query, rag_response):
-    GEMINI_API_KEY = os.environ["GEMINI_API_KEY"]
-    if not GEMINI_API_KEY:
-        raise ValueError("Gemini API key not found.")
-    print('GEMINI_API_KEY', GEMINI_API_KEY)
+    GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+    print('GOOGLE_API_KEY', GOOGLE_API_KEY)
+    if not GOOGLE_API_KEY:
+        raise ValueError("Google API key not found.")
+    print('GOOGLE_API_KEY', GOOGLE_API_KEY)
     prompt = f"""
 You are an AI assistant for Community Dreams Foundation. A user asked:
 
@@ -16,7 +17,7 @@ A: {rag_response}
 
 Rewrite this in a friendly, helpful tone. Keep it accurate and concise.
 """
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GOOGLE_API_KEY}"
     print('url', url)
     headers = {"Content-Type": "application/json"}
     body = {

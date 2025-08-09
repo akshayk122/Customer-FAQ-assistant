@@ -1,0 +1,11 @@
+google-cloud-secret-manager==2.24.0
+google-api-core==2.25.1
+googleapis-common-protos==1.70.0
+protobuf==5.29.5
+grpcio==1.73.1
+# Common conflict sources, let's include them for the next test
+numpy==2.3.1
+pandas==2.2.3
+torch==2.7.1
+transformers==4.53.0
+sentence-transformers==5.0.0

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Voice & Chat FAQ Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #chat-container {
+      width: 100%;
+      max-width: 600px;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    #chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .message {
+      margin-bottom: 15px;
+    }
+
+    .message strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .bot {
+      background: #e9f5e9;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .user {
+      background: #e0e0e0;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: right;
+    }
+
+    .input-row {
+      display: flex;
+      padding: 10px;
+      gap: 10px;
+    }
+
+    #user-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #send-button, #mic-button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #send-button:hover, #mic-button:hover {
+      background-color: #45a049;
+    }
+
+    #live-transcript {
+      padding: 10px;
+      font-style: italic;
+      color: gray;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <div id="chat-box"></div>
+
+    <div class="input-row">
+      <button id="mic-button">🎤</button>
+      <input type="text" id="user-input" placeholder="Ask something..." />
+      <button id="send-button">Send</button>
+    </div>
+
+    <div id="live-transcript">Live transcript will appear here...</div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

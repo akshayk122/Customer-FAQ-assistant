@@ -14,33 +14,21 @@
     }
 
     :root {
-      /* shadcn/ui inspired colors */
-      --background: 0 0% 100%;
-      --foreground: 222.2 84% 4.9%;
-      --card: 0 0% 100%;
-      --card-foreground: 222.2 84% 4.9%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 222.2 84% 4.9%;
-      --primary: 221.2 83.2% 53.3%;
-      --primary-foreground: 210 40% 98%;
-      --secondary: 210 40% 96%;
-      --secondary-foreground: 222.2 84% 4.9%;
-      --muted: 210 40% 96%;
-      --muted-foreground: 215.4 16.3% 46.9%;
-      --accent: 210 40% 96%;
-      --accent-foreground: 222.2 84% 4.9%;
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 210 40% 98%;
-      --border: 214.3 31.8% 91.4%;
-      --input: 214.3 31.8% 91.4%;
-      --ring: 221.2 83.2% 53.3%;
+      /* CDF Green Color Palette */
+      --primary-green: #2E5A2E;
+      --light-green-bg: #E8F5E8;
+      --accent-green: #4CAF50;
+      --white: #FFFFFF;
+      --text-dark: #333333;
+      --text-muted: #9E9E9E;
+      --border-light: #E0E0E0;
       --radius: 0.5rem;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      background-color: hsl(var(--secondary));
-      color: hsl(var(--foreground));
+      background-color: var(--light-green-bg);
+      color: var(--primary-green);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -50,36 +38,85 @@
       font-feature-settings: "rlig" 1, "calt" 1;
     }
 
-    #chat-container {
+    #main-container {
+      display: flex;
+      gap: 3rem;
+      max-width: 1600px;
       width: 100%;
-      max-width: 768px;
+      margin: 0 auto;
+      align-items: stretch;
+      min-height: 85vh;
+      justify-content: space-between;
+    }
+
+    .welcome-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 3rem;
+      text-align: left;
+    }
+
+    .welcome-content {
+      max-width: 600px;
+    }
+
+    .welcome-heading {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--primary-green);
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .welcome-subheading {
+      font-size: 2.5rem;
+      color: var(--primary-green);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-transform: lowercase;
+    }
+
+    .welcome-description {
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    #chat-container {
+      flex: 0 0 550px;
+      width: 550px;
       height: 85vh;
-      background-color: hsl(var(--card));
-      border: 1px solid hsl(var(--border));
+      background-color: var(--white);
+      border: 1px solid var(--border-light);
       border-radius: calc(var(--radius) * 2);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      margin-right: 0;
     }
 
     .header {
       padding: 1.5rem 2rem;
-      border-bottom: 1px solid hsl(var(--border));
-      background-color: hsl(var(--card));
+      border-bottom: 1px solid var(--border-light);
+      background-color: var(--white);
     }
 
     .header h1 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: hsl(var(--foreground));
+      color: var(--primary-green);
       margin-bottom: 0.25rem;
       letter-spacing: -0.025em;
     }
 
     .header p {
       font-size: 0.875rem;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       font-weight: 400;
     }
 
@@ -87,7 +124,7 @@
       flex: 1;
       padding: 1.5rem;
       overflow-y: auto;
-      background-color: hsl(var(--background));
+      background-color: var(--white);
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -103,12 +140,12 @@
     }
 
     #chat-box::-webkit-scrollbar-thumb {
-      background: hsl(var(--border));
+      background: var(--border-light);
       border-radius: 3px;
     }
 
     #chat-box::-webkit-scrollbar-thumb:hover {
-      background: hsl(var(--muted-foreground));
+      background: var(--text-muted);
     }
 
     .user, .bot {
@@ -134,15 +171,15 @@
 
     .user {
       align-self: flex-end;
-      background-color: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
+      background-color: var(--accent-green);
+      color: var(--white);
     }
 
     .bot {
       align-self: flex-start;
-      background-color: hsl(var(--muted));
-      color: hsl(var(--muted-foreground));
-      border: 1px solid hsl(var(--border));
+      background-color: var(--light-green-bg);
+      color: var(--primary-green);
+      border: 1px solid var(--border-light);
     }
 
     .empty-state {
@@ -152,22 +189,22 @@
       justify-content: center;
       height: 100%;
       text-align: center;
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
       padding: 3rem 2rem;
     }
 
     .empty-state i {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: hsl(var(--muted-foreground));
-      opacity: 0.5;
+      color: var(--primary-green);
+      opacity: 0.7;
     }
 
     .empty-state h3 {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: hsl(var(--foreground));
+      color: var(--primary-green);
     }
 
     .empty-state p {
@@ -175,14 +212,15 @@
       max-width: 400px;
       margin: 0 auto;
       line-height: 1.6;
+      color: var(--text-dark);
     }
 
     .input-row {
       display: flex;
       padding: 1rem;
       gap: 0.5rem;
-      background-color: hsl(var(--background));
-      border-top: 1px solid hsl(var(--border));
+      background-color: var(--white);
+      border-top: 1px solid var(--border-light);
       align-items: end;
     }
 
@@ -190,24 +228,24 @@
       flex: 1;
       padding: 0.5rem 0.75rem;
       font-size: 0.875rem;
-      border: 1px solid hsl(var(--input));
+      border: 1px solid var(--border-light);
       border-radius: var(--radius);
       outline: none;
       transition: all 0.2s;
       font-family: inherit;
-      background-color: hsl(var(--background));
-      color: hsl(var(--foreground));
+      background-color: var(--white);
+      color: var(--text-dark);
       min-height: 2.5rem;
       resize: none;
     }
 
     #user-input:focus {
-      border-color: hsl(var(--ring));
-      box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+      border-color: var(--accent-green);
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
     }
 
     #user-input::placeholder {
-      color: hsl(var(--muted-foreground));
+      color: var(--text-muted);
     }
 
     #mic-button, #send-button {
@@ -228,23 +266,23 @@
     }
 
     #mic-button {
-      background-color: hsl(var(--secondary));
-      color: hsl(var(--secondary-foreground));
-      border: 1px solid hsl(var(--border));
+      background-color: var(--light-green-bg);
+      color: var(--primary-green);
+      border: 1px solid var(--border-light);
       min-width: 2.5rem;
     }
 
     #mic-button:hover {
-      background-color: hsl(var(--secondary) / 0.8);
+      background-color: #D4E8D4;
     }
 
     #send-button {
-      background-color: hsl(var(--primary));
-      color: hsl(var(--primary-foreground));
+      background-color: var(--accent-green);
+      color: var(--white);
     }
 
     #send-button:hover {
-      background-color: hsl(var(--primary) / 0.9);
+      background-color: #45A049;
     }
 
     #send-button:disabled, #mic-button:disabled {
@@ -255,9 +293,9 @@
     #live-transcript {
       padding: 0.75rem 1rem;
       font-style: italic;
-      color: hsl(var(--muted-foreground));
-      background-color: hsl(var(--muted));
-      border-top: 1px solid hsl(var(--border));
+      color: var(--text-muted);
+      background-color: var(--light-green-bg);
+      border-top: 1px solid var(--border-light);
       font-size: 0.75rem;
       min-height: 2.5rem;
       display: flex;
@@ -266,8 +304,8 @@
     }
 
     #live-transcript:not(:empty) {
-      background-color: hsl(var(--accent));
-      color: hsl(var(--accent-foreground));
+      background-color: var(--accent-green);
+      color: var(--white);
     }
 
     /* Responsive Design */
@@ -276,9 +314,36 @@
         padding: 0.5rem;
       }
 
+      #main-container {
+        flex-direction: column;
+        gap: 1rem;
+        min-height: auto;
+        max-width: 100%;
+      }
+
+      .welcome-section {
+        padding: 2rem;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .welcome-heading {
+        font-size: 2.5rem;
+      }
+
+      .welcome-subheading {
+        font-size: 1.5rem;
+      }
+
+      .welcome-description {
+        font-size: 1rem;
+      }
+
       #chat-container {
-        height: 90vh;
+        height: 70vh;
         max-width: none;
+        margin-right: 0;
+        flex: 1;
       }
 
       .header {
@@ -337,8 +402,28 @@
     }
 
     @media (max-width: 480px) {
+      #main-container {
+        gap: 0.75rem;
+      }
+
+      .welcome-section {
+        padding: 1.5rem;
+      }
+
+      .welcome-heading {
+        font-size: 2rem;
+      }
+
+      .welcome-subheading {
+        font-size: 1.25rem;
+      }
+
+      .welcome-description {
+        font-size: 0.9rem;
+      }
+
       #chat-container {
-        height: 95vh;
+        height: 75vh;
       }
 
       .input-row {
@@ -361,17 +446,17 @@
     /* Animation for recording state */
     @keyframes pulse {
       0%, 100% {
-        box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.4);
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.4);
       }
       50% {
-        box-shadow: 0 0 0 4px hsl(var(--destructive) / 0.1);
+        box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.1);
       }
     }
 
     .recording {
       animation: pulse 1.5s infinite;
-      background-color: hsl(var(--destructive)) !important;
-      color: hsl(var(--destructive-foreground)) !important;
+      background-color: #DC3545 !important;
+      color: var(--white) !important;
     }
 
     /* Loading dots animation */
@@ -386,20 +471,20 @@
         text-shadow: 0.25em 0 0 transparent, 0.5em 0 0 transparent; 
       }
       40% { 
-        color: hsl(var(--muted-foreground)); 
+        color: var(--text-muted); 
         text-shadow: 0.25em 0 0 transparent, 0.5em 0 0 transparent; 
       }
       60% { 
-        text-shadow: 0.25em 0 0 hsl(var(--muted-foreground)), 0.5em 0 0 transparent; 
+        text-shadow: 0.25em 0 0 var(--text-muted), 0.5em 0 0 transparent; 
       }
       80%, 100% { 
-        text-shadow: 0.25em 0 0 hsl(var(--muted-foreground)), 0.5em 0 0 hsl(var(--muted-foreground)); 
+        text-shadow: 0.25em 0 0 var(--text-muted), 0.5em 0 0 var(--text-muted); 
       }
     }
 
     /* Focus visible for accessibility */
     button:focus-visible {
-      outline: 2px solid hsl(var(--ring));
+      outline: 2px solid var(--accent-green);
       outline-offset: 2px;
     }
 
@@ -410,29 +495,41 @@
   </style>
 </head>
 <body>
-  <div id="chat-container">
-    <div class="header">
-              <h1><i class="fas fa-question-circle"></i> CDF FAQ Assistant</h1>
-      <p>Ask questions using voice or text - I'm here to help!</p>
-    </div>
-
-    <div id="chat-box">
-      <div class="empty-state">
-        <i class="fas fa-comments"></i>
-        <h3>Welcome to CDF AI Assistant</h3>
-        <p>Start by typing a question below or click the microphone to speak. I'll help you find the information you need quickly and accurately.</p>
+  <div id="main-container">
+    <!-- Left Section - Welcome Text -->
+    <div class="welcome-section">
+      <div class="welcome-content">
+        <h1 class="welcome-heading">Hey how are you today?</h1>
+        <h2 class="welcome-subheading">any questions?</h2>
+        <p class="welcome-description">our FAQ bot is here to help you with any questions related to CDreams and Dream Stream Foundation</p>
       </div>
     </div>
 
-    <div class="input-row">
-      <button id="mic-button" title="Voice Input">
-        <i class="fas fa-microphone"></i>
-      </button>
-      <input type="text" id="user-input" placeholder="Type your question here..." />
-      <button id="send-button" title="Send Message">Send</button>
-    </div>
+    <!-- Right Section - Chat Interface -->
+    <div id="chat-container">
+      <div class="header">
+        <h1><i class="fas fa-seedling"></i> Hi there</h1>
+        <p>Ask anything about CDF or DreamStream✨</p>
+      </div>
 
-    <div id="live-transcript">Live transcript will appear here...</div>
+      <div id="chat-box">
+        <div class="empty-state">
+          <i class="fas fa-comments"></i>
+          <h3>Welcome to CDF AI Assistant</h3>
+          <p>Start by typing a question below or click the microphone to speak. I'll help you find the information you need quickly and accurately.</p>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <button id="mic-button" title="Voice Input">
+          <i class="fas fa-microphone"></i>
+        </button>
+        <input type="text" id="user-input" placeholder="Message CDF Bot" />
+        <button id="send-button" title="Send Message">Send</button>
+      </div>
+
+      <div id="live-transcript">Live transcript will appear here...</div>
+    </div>
   </div>
 
   <script src="/static/script.js"></script>

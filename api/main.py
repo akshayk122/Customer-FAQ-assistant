@@ -3,10 +3,12 @@ import os
 import time
 import wave
 import logging
+import shutil
+from pathlib import Path
 from collections import deque
 
-from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Depends
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi import FastAPI, File, UploadFile, HTTPException, Request, Depends, Form
+from fastapi.responses import FileResponse, StreamingResponse, HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from google.cloud import texttospeech
@@ -195,6 +197,87 @@ async def ask_tts(req: TextRequest):
 @app.get("/health")
 async def health_check():
     return {"status": "AI Voice FAQ Assistant is running."}
+
+# Dashboard route
+@app.get("/dashboard")
+async def dashboard():
+    return FileResponse("static/dashboard.html")
+
+# File upload route
+@app.post("/api/upload-file")
+async def upload_file(file: UploadFile = File(...)):
+    # Validate file type
+    allowed_extensions = {'.docx', '.pdf', '.txt', '.csv', '.json'}
+    file_extension = Path(file.filename).suffix.lower()
+    
+    if file_extension not in allowed_extensions:
+        raise HTTPException(400, f"File type {file_extension} not supported. Allowed: {', '.join(allowed_extensions)}")
+    
+    # Create data directory if it doesn't exist
+    data_dir = Path("data")
+    data_dir.mkdir(exist_ok=True)
+    
+    # Save file to data directory
+    file_path = data_dir / file.filename
+    
+    try:
+        with open(file_path, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
+        
+        # Reload FAQs and rebuild index with new file
+        global faq_data, index
+        faq_data = load_all_faqs("data")
+        index = build_index(faq_data)
+        
+        return {
+            "message": "File uploaded successfully",
+            "filename": file.filename,
+            "size": file_path.stat().st_size
+        }
+    except Exception as e:
+        logger.error(f"File upload error: {e}")
+        raise HTTPException(500, "Failed to upload file")
+
+# Get list of uploaded files
+@app.get("/api/files")
+async def list_files():
+    data_dir = Path("data")
+    if not data_dir.exists():
+        return {"files": []}
+    
+    files = []
+    for file_path in data_dir.iterdir():
+        if file_path.is_file():
+            files.append({
+                "name": file_path.name,
+                "size": file_path.stat().st_size,
+                "modified": file_path.stat().st_mtime,
+                "extension": file_path.suffix.lower()
+            })
+    
+    return {"files": files}
+
+# Delete file route
+@app.delete("/api/files/{filename}")
+async def delete_file(filename: str):
+    data_dir = Path("data")
+    file_path = data_dir / filename
+    
+    if not file_path.exists():
+        raise HTTPException(404, "File not found")
+    
+    try:
+        file_path.unlink()
+        
+        # Reload FAQs and rebuild index after deletion
+        global faq_data, index
+        faq_data = load_all_faqs("data")
+        index = build_index(faq_data)
+        
+        return {"message": f"File {filename} deleted successfully"}
+    except Exception as e:
+        logger.error(f"File deletion error: {e}")
+        raise HTTPException(500, "Failed to delete file")
 
 # Local dev run
 if __name__ == "__main__":

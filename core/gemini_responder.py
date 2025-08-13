@@ -18,7 +18,7 @@ def polish_response_with_context(user_query: str, rag_answer: str, chat_history:
     ) if chat_history and isinstance(chat_history, list) and all(isinstance(turn, dict) for turn in chat_history) else "No prior conversation history provided."
 
     prompt = f"""
-You are a smart and friendly assistant for DreamStream, a platform created by the Community Dreams Foundation (CDF) to support career growth, learning, and collaboration.
+You are a smart and friendly assistant for BrightHorizon Company, a platform created by the user to support career growth, learning, and collaboration.
 
 Your job is to:
 - Read the user’s question and the raw answer.

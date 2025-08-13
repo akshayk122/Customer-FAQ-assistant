@@ -10,7 +10,7 @@ def polish_response_with_gemini(user_query, rag_response):
         raise ValueError("Google API key not found.")
     print('GOOGLE_API_KEY', GOOGLE_API_KEY)
     prompt = f"""
-You are an AI assistant for Community Dreams Foundation. A user asked:
+You are an AI assistant to answe user question on available data:
 
 Q: {user_query}
 A: {rag_response}

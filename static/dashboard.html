@@ -282,6 +282,38 @@
       opacity: 0.5;
     }
 
+    .refresh-btn {
+      background-color: var(--accent-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 1rem;
+    }
+
+    .refresh-btn:hover {
+      background-color: #2563EB;
+    }
+
+    .kb-status {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .status-indicator {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    .status-indicator i {
+      margin-right: 0.5rem;
+    }
+
     @media (max-width: 768px) {
       .container {
         padding: 1rem;
@@ -317,6 +349,14 @@
     <div class="header">
       <h1>File Management Dashboard</h1>
       <p>Upload and manage FAQ documents for your AI Voice Assistant</p>
+      <div class="kb-status">
+        <span class="status-indicator" id="kbStatus">
+          <i class="fas fa-brain"></i> Knowledge Base: Loading...
+        </span>
+        <button class="refresh-btn" onclick="refreshKnowledgeBase()">
+          <i class="fas fa-sync-alt"></i> Refresh Knowledge Base
+        </button>
+      </div>
     </div>
 
     <div class="nav-links">
@@ -361,6 +401,7 @@
     const statusMessage = document.getElementById('statusMessage');
     const loading = document.getElementById('loading');
     const filesList = document.getElementById('filesList');
+    const kbStatus = document.getElementById('kbStatus');
 
     // Drag and drop functionality
     uploadArea.addEventListener('dragover', (e) => {
@@ -523,7 +564,60 @@
     }
 
     // Load files on page load
-    document.addEventListener('DOMContentLoaded', loadFiles);
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFiles();
+      loadKnowledgeBaseStatus();
+    });
+
+    // Load knowledge base status
+    async function loadKnowledgeBaseStatus() {
+      try {
+        const response = await fetch('/api/refresh', {
+          method: 'POST'
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: ${result.faq_count} FAQ entries loaded`;
+        } else {
+          kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: Error`;
+        }
+      } catch (error) {
+        kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: Error`;
+      }
+    }
+
+    // Refresh knowledge base functionality
+    async function refreshKnowledgeBase() {
+      const refreshBtn = document.querySelector('.refresh-btn');
+      const originalText = refreshBtn.innerHTML;
+      
+      try {
+        refreshBtn.disabled = true;
+        refreshBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Refreshing...';
+        
+        const response = await fetch('/api/refresh', {
+          method: 'POST'
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok) {
+          showStatus(`Knowledge base refreshed successfully! Loaded ${result.faq_count} FAQ entries.`, 'success');
+          kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: ${result.faq_count} FAQ entries loaded`;
+        } else {
+          showStatus('Refresh failed: ' + result.detail, 'error');
+          kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: Error`;
+        }
+      } catch (error) {
+        showStatus('Refresh failed: ' + error.message, 'error');
+        kbStatus.innerHTML = `<i class="fas fa-brain"></i> Knowledge Base: Error`;
+      } finally {
+        refreshBtn.disabled = false;
+        refreshBtn.innerHTML = originalText;
+      }
+    }
   </script>
 </body>
 </html> 

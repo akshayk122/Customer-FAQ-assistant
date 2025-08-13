@@ -94,10 +94,27 @@ async def rate_limit(request: Request):
 faq_data = load_all_faqs("data")
 index = build_index(faq_data)
 
+# Function to reload FAQs and rebuild index
+def reload_knowledge_base():
+    global faq_data, index
+    try:
+        logger.info("Reloading knowledge base...")
+        faq_data = load_all_faqs("data")
+        index = build_index(faq_data)
+        logger.info(f"Knowledge base reloaded successfully. Loaded {len(faq_data)} FAQ entries.")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to reload knowledge base: {e}")
+        return False
+
 # Core Gemini-enhanced RAG QA function
 def get_answer_with_gemini(user_query: str, chat_history: list = None) -> str:
-    rag_response = index.query(user_query).response
-    return polish_response_with_context(user_query, rag_response, chat_history)
+    try:
+        rag_response = index.query(user_query).response
+        return polish_response_with_context(user_query, rag_response, chat_history)
+    except Exception as e:
+        logger.error(f"Error in RAG query: {e}")
+        return "I'm sorry, I encountered an error while processing your question. Please try again or contact support if the issue persists."
 
 # Audio streaming utility
 def stream_audio(audio_bytes):
@@ -198,6 +215,20 @@ async def ask_tts(req: TextRequest):
 async def health_check():
     return {"status": "AI Voice FAQ Assistant is running."}
 
+# Refresh knowledge base endpoint
+@app.post("/api/refresh")
+async def refresh_knowledge_base():
+    """Manually refresh the knowledge base by reloading all files and rebuilding the index."""
+    success = reload_knowledge_base()
+    if success:
+        return {
+            "message": "Knowledge base refreshed successfully",
+            "faq_count": len(faq_data),
+            "status": "success"
+        }
+    else:
+        raise HTTPException(500, "Failed to refresh knowledge base")
+
 # Dashboard route
 @app.get("/dashboard")
 async def dashboard():
@@ -225,9 +256,7 @@ async def upload_file(file: UploadFile = File(...)):
             shutil.copyfileobj(file.file, buffer)
         
         # Reload FAQs and rebuild index with new file
-        global faq_data, index
-        faq_data = load_all_faqs("data")
-        index = build_index(faq_data)
+        reload_knowledge_base()
         
         return {
             "message": "File uploaded successfully",
@@ -270,9 +299,7 @@ async def delete_file(filename: str):
         file_path.unlink()
         
         # Reload FAQs and rebuild index after deletion
-        global faq_data, index
-        faq_data = load_all_faqs("data")
-        index = build_index(faq_data)
+        reload_knowledge_base()
         
         return {"message": f"File {filename} deleted successfully"}
     except Exception as e:

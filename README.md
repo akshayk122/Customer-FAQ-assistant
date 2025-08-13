@@ -1,10 +1,10 @@
-# 🧠 AI Voice FAQ Assistant – Community Dreams Foundation (CDF)
+# 🧠 AI Voice FAQ Assistant
 
-This project is a **voice and chat-based FAQ assistant** built to support teams, volunteers, and newcomers at CDF. It uses advanced AI tools to **read documents, understand common questions, and respond like a helpful human assistant** — all through your browser.
+This project is a **voice and chat-based FAQ assistant** built to support teams, volunteers, and newcomers. It uses advanced AI tools to **read documents, understand common questions, and respond like a helpful human assistant** — all through your browser.
 
-It’s built using the latest technologies from **Google’s AI (Gemini Pro)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
+It's built using the latest technologies from **Google's AI (Gemini Pro)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
 
-Whether you’re a **developer**, a **non-technical team member**, or a **project lead**, this assistant is designed so **anyone can use it**.
+Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant is designed so **anyone can use it**.
 
 ---
 
@@ -54,7 +54,7 @@ ai-voice-faq-assistant/
 │   ├── index.html           # Your chat window
 │   └── script.js            # Makes the mic and chat box work
 └── data/
-    └── DreamStream FAQ.docx # 📄 Your FAQ files go here
+    └── FAQ Documents/       # 📄 Your FAQ files go here
 ```
 
 ---
@@ -115,7 +115,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ## 🗃️ Add Your FAQ Files
 
-You don’t need to code anything.
+You don't need to code anything.
 
 1. Open the `data/` folder.
 2. Drag and drop any `.docx`, `.pdf`, `.csv`, `.txt`, or `.json` file.

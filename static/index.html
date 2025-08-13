@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI FAQ Assistant</title>
+  <title>CDF AI FAQ Assistant</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -14,21 +14,21 @@
     }
 
     :root {
-      /* CDF Green Color Palette */
-      --primary-green: #2E5A2E;
-      --light-green-bg: #E8F5E8;
-      --accent-green: #4CAF50;
+      /* Blue Color Palette */
+      --primary-blue: #1E3A8A;
+      --light-blue-bg: #EFF6FF;
+      --accent-blue: #3B82F6;
       --white: #FFFFFF;
-      --text-dark: #333333;
-      --text-muted: #9E9E9E;
-      --border-light: #E0E0E0;
+      --text-dark: #1F2937;
+      --text-muted: #6B7280;
+      --border-light: #D1D5DB;
       --radius: 0.5rem;
     }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      background-color: var(--light-green-bg);
-      color: var(--primary-green);
+      background-color: var(--light-blue-bg);
+      color: var(--primary-blue);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -65,7 +65,7 @@
     .welcome-heading {
       font-size: 4rem;
       font-weight: 800;
-      color: var(--primary-green);
+      color: var(--primary-blue);
       margin-bottom: 1rem;
       letter-spacing: -0.02em;
       line-height: 1.1;
@@ -73,7 +73,7 @@
 
     .welcome-subheading {
       font-size: 2.5rem;
-      color: var(--primary-green);
+      color: var(--primary-blue);
       margin-bottom: 1.5rem;
       font-weight: 700;
       text-transform: lowercase;
@@ -109,7 +109,7 @@
     .header h1 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: var(--primary-green);
+      color: var(--primary-blue);
       margin-bottom: 0.25rem;
       letter-spacing: -0.025em;
     }
@@ -118,6 +118,29 @@
       font-size: 0.875rem;
       color: var(--text-muted);
       font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .dashboard-link {
+      text-decoration: none;
+      color: var(--accent-blue);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+      border: 1px solid var(--accent-blue);
+      font-size: 0.875rem;
+    }
+
+    .dashboard-link:hover {
+      background-color: var(--accent-blue);
+      color: var(--white);
     }
 
     #chat-box {
@@ -171,14 +194,14 @@
 
     .user {
       align-self: flex-end;
-      background-color: var(--accent-green);
+      background-color: var(--accent-blue);
       color: var(--white);
     }
 
     .bot {
       align-self: flex-start;
-      background-color: var(--light-green-bg);
-      color: var(--primary-green);
+      background-color: var(--light-blue-bg);
+      color: var(--primary-blue);
       border: 1px solid var(--border-light);
     }
 
@@ -196,7 +219,7 @@
     .empty-state i {
       font-size: 3rem;
       margin-bottom: 1rem;
-      color: var(--primary-green);
+      color: var(--primary-blue);
       opacity: 0.7;
     }
 
@@ -204,7 +227,7 @@
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: var(--primary-green);
+      color: var(--primary-blue);
     }
 
     .empty-state p {
@@ -240,8 +263,8 @@
     }
 
     #user-input:focus {
-      border-color: var(--accent-green);
-      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
     }
 
     #user-input::placeholder {
@@ -266,23 +289,23 @@
     }
 
     #mic-button {
-      background-color: var(--light-green-bg);
-      color: var(--primary-green);
+      background-color: var(--light-blue-bg);
+      color: var(--primary-blue);
       border: 1px solid var(--border-light);
       min-width: 2.5rem;
     }
 
     #mic-button:hover {
-      background-color: #D4E8D4;
+      background-color: #E0E7FF;
     }
 
     #send-button {
-      background-color: var(--accent-green);
+      background-color: var(--accent-blue);
       color: var(--white);
     }
 
     #send-button:hover {
-      background-color: #45A049;
+      background-color: #3B82F6;
     }
 
     #send-button:disabled, #mic-button:disabled {
@@ -294,7 +317,7 @@
       padding: 0.75rem 1rem;
       font-style: italic;
       color: var(--text-muted);
-      background-color: var(--light-green-bg);
+      background-color: var(--light-blue-bg);
       border-top: 1px solid var(--border-light);
       font-size: 0.75rem;
       min-height: 2.5rem;
@@ -304,7 +327,7 @@
     }
 
     #live-transcript:not(:empty) {
-      background-color: var(--accent-green);
+      background-color: var(--accent-blue);
       color: var(--white);
     }
 
@@ -484,7 +507,7 @@
 
     /* Focus visible for accessibility */
     button:focus-visible {
-      outline: 2px solid var(--accent-green);
+      outline: 2px solid var(--accent-blue);
       outline-offset: 2px;
     }
 
@@ -501,7 +524,7 @@
       <div class="welcome-content">
         <h1 class="welcome-heading">Hey how are you today?</h1>
         <h2 class="welcome-subheading">any questions?</h2>
-        <p class="welcome-description">our FAQ bot is here to help you with any questions related to XYZ Organization</p>
+        <p class="welcome-description">our FAQ bot is here to help you with any questions related to CDF Organization</p>
       </div>
     </div>
 
@@ -509,13 +532,18 @@
     <div id="chat-container">
       <div class="header">
         <h1><i class="fas fa-seedling"></i> Hi there</h1>
-        <p>Ask anything about AI✨</p>
+        <p>Ask anything about CDF or DreamStream✨</p>
+        <div class="nav-links">
+          <a href="/dashboard" class="dashboard-link">
+            <i class="fas fa-folder-open"></i> Manage Files
+          </a>
+        </div>
       </div>
 
       <div id="chat-box">
         <div class="empty-state">
           <i class="fas fa-comments"></i>
-          <h3>Welcome to  AI Assistant</h3>
+          <h3>Welcome to CDF✨ AI Assistant</h3>
           <p>Start by typing a question below or click the microphone to speak. I'll help you find the information you need quickly and accurately.</p>
         </div>
       </div>

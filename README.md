@@ -2,16 +2,12 @@
 
 This project is an **AI-powered Voice FAQ Assistant** that automatically reads your organization's documents and answers questions about them through voice or text chat.
 
-<<<<<<< HEAD
-It's built using the latest technologies from **Google's AI (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
-=======
 **What it does:**
 - 📚 **Reads your documents** - Upload .docx, .pdf, .txt, .csv, or .json files
 - 🎤 **Answers questions by voice** - Ask questions using your microphone
 - 💬 **Answers questions by text** - Type questions and get instant responses
 - 🧠 **Learns from your content** - Automatically understands your documents
 - 🔄 **Stays updated** - Automatically refreshes when you add new files
->>>>>>> 2654778 (read  me update)
 
 **Perfect for:**
 - **HR Teams** - Answer employee policy questions instantly
@@ -33,16 +29,28 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 - 🔍 Find the best answer using vector search (semantic similarity)
 - 🗣 Speak the answer back using natural-sounding voice
 - ✨ Make the response more human-like using Gemini AI (Google)
+- 📊 File management dashboard for easy document uploads
+- 🔄 Automatic knowledge base updates when files change
+- 🧠 Smart content parsing for both Q&A and policy documents
+- 📈 Real-time knowledge base status monitoring
 
+---
 
 ## 🖼️ Web Interface Screenshots
 
 ### **Chat Interface**
-<img width="1901" height="964" alt="image" src="https://github.com/user-attachments/assets/0ce7c350-b5be-4b7c-9797-b29426307d9d" />
-
+![Chat Interface](screenshots/chat-interface.png)
+*Modern blue-themed chat interface with voice and text input capabilities*
 
 ### **File Management Dashboard**
-<img width="1920" height="962" alt="image" src="https://github.com/user-attachments/assets/3643fdd6-29e6-4b55-9462-838a7266ad32" />
+![Dashboard](screenshots/dashboard.png)
+*Comprehensive file management dashboard for uploading and managing documents*
+
+### **Mobile Responsive Design**
+![Mobile View](screenshots/mobile-view.png)
+*Responsive design that works seamlessly on all devices*
+
+---
 
 ## 🧱 How It Works (Simple Explanation)
 

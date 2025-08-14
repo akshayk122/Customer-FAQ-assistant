@@ -21,18 +21,11 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 ## 🖼️ Web Interface Screenshots
 
 ### **Chat Interface**
-![Chat Interface](screenshots/chat-interface.png)
-*Modern blue-themed chat interface with voice and text input capabilities*
+<img width="1901" height="964" alt="image" src="https://github.com/user-attachments/assets/0ce7c350-b5be-4b7c-9797-b29426307d9d" />
+
 
 ### **File Management Dashboard**
-![Dashboard](screenshots/dashboard.png)
-*Comprehensive file management dashboard for uploading and managing documents*
-
-### **Mobile Responsive Design**
-![Mobile View](screenshots/mobile-view.png)
-*Responsive design that works seamlessly on all devices*
-
----
+<img width="1920" height="962" alt="image" src="https://github.com/user-attachments/assets/3643fdd6-29e6-4b55-9462-838a7266ad32" />
 
 ## 🧱 How It Works (Simple Explanation)
 
@@ -131,7 +124,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ## 🗃️ Managing Your Documents
 
-### **Easy File Upload (NEW!)**
+### **Easy File Upload**
 1. **Go to Dashboard:** Visit `/dashboard` in your browser
 2. **Drag & Drop:** Simply drag files into the upload area
 3. **Automatic Processing:** Files are automatically processed and indexed
@@ -280,7 +273,7 @@ git push origin feature/my-task-name
 
 ---
 
-## 🆘 Troubleshooting
+## Troubleshooting
 
 ### **New Files Not Loading?**
 1. **Check Dashboard:** Go to `/dashboard` and verify file is listed

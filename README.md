@@ -1,10 +1,27 @@
 # 🧠 AI Voice FAQ Assistant
 
-This project is a **voice and chat-based FAQ assistant** built to support teams, volunteers, and newcomers. It uses advanced AI tools to **read documents, understand common questions, and respond like a helpful human assistant** — all through your browser.
+This project is an **AI-powered Voice FAQ Assistant** that automatically reads your organization's documents and answers questions about them through voice or text chat.
 
+<<<<<<< HEAD
 It's built using the latest technologies from **Google's AI (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
+=======
+**What it does:**
+- 📚 **Reads your documents** - Upload .docx, .pdf, .txt, .csv, or .json files
+- 🎤 **Answers questions by voice** - Ask questions using your microphone
+- 💬 **Answers questions by text** - Type questions and get instant responses
+- 🧠 **Learns from your content** - Automatically understands your documents
+- 🔄 **Stays updated** - Automatically refreshes when you add new files
+>>>>>>> 2654778 (read  me update)
 
-Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant is designed so **anyone can use it**.
+**Perfect for:**
+- **HR Teams** - Answer employee policy questions instantly
+- **Customer Support** - Provide accurate product/service information
+- **Training Departments** - Help new employees learn company procedures
+- **Any Organization** - Make your documentation easily accessible
+
+The system uses **Google's AI (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings to understand your content and provide intelligent responses.
+
+Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant makes your organization's knowledge instantly accessible to everyone.
 
 ---
 

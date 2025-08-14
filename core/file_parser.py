@@ -21,13 +21,14 @@ def is_question(line: str) -> bool:
     line = line.strip()
     return line.endswith('?') or bool(re.match(r'(?i)^(what|how|when|why|is|can|does|do|are|who|where)\b.*\?$', line))
 
-def extract_faq_pairs(lines):
+def extract_faq_pairs(lines, file_path=""):
     """
-    Extracts question-answer pairs from plain text lines.
+    Extracts content from plain text lines, handling both Q&A format and general content.
     """
     faq_pairs = []
     question, answer = "", ""
-
+    
+    # First try to extract Q&A pairs
     for line in lines:
         line = line.strip()
         if not line:
@@ -42,24 +43,41 @@ def extract_faq_pairs(lines):
     
     if question and answer:
         faq_pairs.append({"question": question, "answer": answer.strip()})
+    
+    # If no Q&A pairs found, create content chunks from the document
+    if not faq_pairs:
+        content = " ".join([line.strip() for line in lines if line.strip()])
+        if content:
+            # Split content into manageable chunks
+            words = content.split()
+            chunk_size = 100  # words per chunk
+            for i in range(0, len(words), chunk_size):
+                chunk = " ".join(words[i:i + chunk_size])
+                if len(chunk.strip()) > 20:  # Only add chunks with meaningful content
+                    filename = os.path.basename(file_path) if file_path else "this document"
+                    faq_pairs.append({
+                        "question": f"Information about {filename}",
+                        "answer": chunk.strip()
+                    })
+    
     return faq_pairs
 
 def load_docx(file_path):
     doc = DocxDocument(file_path)
     lines = [para.text for para in doc.paragraphs if para.text.strip()]
-    return extract_faq_pairs(lines)
+    return extract_faq_pairs(lines, file_path)
 
 def load_pdf(file_path):
     doc = fitz.open(file_path)
     lines = []
     for page in doc:
         lines.extend(page.get_text().split('\n'))
-    return extract_faq_pairs(lines)
+    return extract_faq_pairs(lines, file_path)
 
 def load_txt(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
-    return extract_faq_pairs(lines)
+    return extract_faq_pairs(lines, file_path)
 
 def load_csv(file_path):
     faq_pairs = []

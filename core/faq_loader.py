@@ -1,5 +1,10 @@
 import os
+import logging
 from core.file_parser import load_faq_pairs
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 SUPPORTED_EXTENSIONS = {'.docx', '.pdf', '.txt', '.csv', '.json'}
 
@@ -20,12 +25,17 @@ def load_all_faqs(data_dir='sample_data'):
     """
     all_faqs = []
     files = get_all_files(data_dir)
-
+    
+    logger.info(f"Found {len(files)} files to process in {data_dir}")
+    
     for file_path in files:
         try:
+            logger.info(f"Processing file: {file_path}")
             faq_pairs = load_faq_pairs(file_path)
+            logger.info(f"Extracted {len(faq_pairs)} FAQ entries from {file_path}")
             all_faqs.extend(faq_pairs)
         except Exception as e:
-            print(f"⚠️ Error parsing {file_path}: {e}")
+            logger.error(f"⚠️ Error parsing {file_path}: {e}")
     
+    logger.info(f"Total FAQ entries loaded: {len(all_faqs)}")
     return all_faqs

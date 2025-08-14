@@ -38,16 +38,12 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 ## 🖼️ Web Interface Screenshots
 
 ### **Chat Interface**
-![Chat Interface](screenshots/chat-interface.png)
-*Modern blue-themed chat interface with voice and text input capabilities*
+<img width="1927" height="965" alt="image" src="https://github.com/user-attachments/assets/61e9dd49-f381-481f-be2e-bc6fd4458055" />
+
 
 ### **File Management Dashboard**
-![Dashboard](screenshots/dashboard.png)
-*Comprehensive file management dashboard for uploading and managing documents*
+<img width="1919" height="962" alt="image" src="https://github.com/user-attachments/assets/67046485-8f5a-425e-ad01-8e81c2434d64" />
 
-### **Mobile Responsive Design**
-![Mobile View](screenshots/mobile-view.png)
-*Responsive design that works seamlessly on all devices*
 
 
 ## 🧱 How It Works (Simple Explanation)

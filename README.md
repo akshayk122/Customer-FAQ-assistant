@@ -19,7 +19,6 @@ The system uses **Google's AI (Gemini)** and **open-source tools** like FastAPI,
 
 Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant makes your organization's knowledge instantly accessible to everyone.
 
----
 
 ## ✅ What It Can Do
 
@@ -34,7 +33,7 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 - 🧠 Smart content parsing for both Q&A and policy documents
 - 📈 Real-time knowledge base status monitoring
 
----
+
 
 ## 🖼️ Web Interface Screenshots
 
@@ -50,7 +49,6 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 ![Mobile View](screenshots/mobile-view.png)
 *Responsive design that works seamlessly on all devices*
 
----
 
 ## 🧱 How It Works (Simple Explanation)
 
@@ -91,7 +89,6 @@ ai-voice-faq-assistant/
     └── Your Documents/      # 📄 Your FAQ and policy files go here
 ```
 
----
 
 ## 🚀 Getting Started (For Everyone)
 

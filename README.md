@@ -16,10 +16,21 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 - 🔍 Find the best answer using vector search (semantic similarity)
 - 🗣 Speak the answer back using natural-sounding voice
 - ✨ Make the response more human-like using Gemini AI (Google)
-- 📊 File management dashboard for easy document uploads
-- 🔄 Automatic knowledge base updates when files change
-- 🧠 Smart content parsing for both Q&A and policy documents
-- 📈 Real-time knowledge base status monitoring
+
+
+## 🖼️ Web Interface Screenshots
+
+### **Chat Interface**
+![Chat Interface](screenshots/chat-interface.png)
+*Modern blue-themed chat interface with voice and text input capabilities*
+
+### **File Management Dashboard**
+![Dashboard](screenshots/dashboard.png)
+*Comprehensive file management dashboard for uploading and managing documents*
+
+### **Mobile Responsive Design**
+![Mobile View](screenshots/mobile-view.png)
+*Responsive design that works seamlessly on all devices*
 
 ---
 
@@ -155,7 +166,7 @@ http://localhost:8000/dashboard # 📊 File Management Dashboard
 ```
 
 ### **Chat Interface Features:**
-- Click the 🎤 mic to ask your question
+- Click the  mic to ask your question
 - Type in the input box for text questions
 - See and hear the assistant's response
 - Modern blue-themed interface

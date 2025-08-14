@@ -2,7 +2,7 @@
 
 This project is a **voice and chat-based FAQ assistant** built to support teams, volunteers, and newcomers. It uses advanced AI tools to **read documents, understand common questions, and respond like a helpful human assistant** — all through your browser.
 
-It's built using the latest technologies from **Google's AI (Gemini Pro)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
+It's built using the latest technologies from **Google's AI (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings.
 
 Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant is designed so **anyone can use it**.
 

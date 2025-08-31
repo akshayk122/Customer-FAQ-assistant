@@ -3,11 +3,11 @@
 This project is an **AI-powered Voice FAQ Assistant** that automatically reads your organization's documents and answers questions about them through voice or text chat.
 
 **What it does:**
-- 📚 **Reads your documents** - Upload .docx, .pdf, .txt, .csv, or .json files
-- 🎤 **Answers questions by voice** - Ask questions using your microphone
-- 💬 **Answers questions by text** - Type questions and get instant responses
-- 🧠 **Learns from your content** - Automatically understands your documents
-- 🔄 **Stays updated** - Automatically refreshes when you add new files
+- **Reads your documents** - Upload .docx, .pdf, .txt, .csv, or .json files
+- **Answers questions by voice** - Ask questions using your microphone
+- **Answers questions by text** - Type questions and get instant responses
+- **Learns from your content** - Automatically understands your documents
+- **Stays updated** - Automatically refreshes when you add new files
 
 **Perfect for:**
 - **HR Teams** - Answer employee policy questions instantly
@@ -20,7 +20,7 @@ The system uses **Google's AI (Gemini)** and **open-source tools** like FastAPI,
 Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant makes your organization's knowledge instantly accessible to everyone.
 
 
-## ✅ What It Can Do
+## What It Can Do
 
 - 🎤 Understand your spoken questions (mic supported!)
 - 💬 Let you type questions instead of speaking

@@ -22,20 +22,20 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 
 ## What It Can Do
 
-- 🎤 Understand your spoken questions (mic supported!)
-- 💬 Let you type questions instead of speaking
-- 📁 Automatically scan `.docx`, `.pdf`, `.txt`, `.csv`, and `.json` documents
-- 🔍 Find the best answer using vector search (semantic similarity)
-- 🗣 Speak the answer back using natural-sounding voice
-- ✨ Make the response more human-like using Gemini AI (Google)
-- 📊 File management dashboard for easy document uploads
-- 🔄 Automatic knowledge base updates when files change
-- 🧠 Smart content parsing for both Q&A and policy documents
-- 📈 Real-time knowledge base status monitoring
+- Understand your spoken questions (mic supported!)
+- Let you type questions instead of speaking
+- Automatically scan `.docx`, `.pdf`, `.txt`, `.csv`, and `.json` documents
+- Find the best answer using vector search (semantic similarity)
+- Speak the answer back using natural-sounding voice
+- Make the response more human-like using Gemini AI (Google)
+- File management dashboard for easy document uploads
+- Automatic knowledge base updates when files change
+- Smart content parsing for both Q&A and policy documents
+- Real-time knowledge base status monitoring
 
 
 
-## 🖼️ Web Interface Screenshots
+## Web Interface Screenshots
 
 ### **Chat Interface**
 <img width="1927" height="965" alt="image" src="https://github.com/user-attachments/assets/61e9dd49-f381-481f-be2e-bc6fd4458055" />

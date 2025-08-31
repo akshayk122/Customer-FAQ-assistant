@@ -46,7 +46,7 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 
 
 
-## 🧱 How It Works (Simple Explanation)
+## How It Works (Simple Explanation)
 
 ```text
 Step 1: You ask a question using mic or by typing it
@@ -59,34 +59,34 @@ This method is called **RAG** – Retrieval-Augmented Generation.
 
 ---
 
-## 📁 Folder Structure (Explained for Everyone)
+## Folder Structure (Explained for Everyone)
 
 ```bash
 ai-voice-faq-assistant/
 ├── api/
-│   └── main.py               # 🔥 The main FastAPI server – THIS is what runs the app
-├── run.py                   # 🧪 Testing script (for devs only, not needed for regular use)
-├── requirements.txt         # List of tools Python will install
-├── .env.example             # Template for adding your private keys
-├── .env                     # Your actual keys (will be hidden from Git)
-├── core/                    # 💡 All the logic for reading files and understanding questions
-│   ├── faq_loader.py       # 📚 Loads and processes all documents
-│   ├── file_parser.py      # 🔍 Parses various file formats intelligently
-│   ├── index_builder.py    # 🏗️ Builds searchable vector index
-│   ├── rag.py              # 🔎 Handles question-answer retrieval
-│   └── gemini_responder.py # ✨ Enhances responses with Gemini AI
+│   └── main.py              
+├── run.py                   
+├── requirements.txt         
+├── .env.example            
+├── .env                    
+├── core/                    
+│   ├── faq_loader.py       
+│   ├── file_parser.py      
+│   ├── index_builder.py    
+│   ├── rag.py              
+│   └── gemini_responder.py 
 ├── utils/
-│   └── faq-voice-keys.json  # 🔐 Google cloud credentials (you download this)
+│   └── faq-voice-keys.json 
 ├── static/
-│   ├── index.html           # 💬 Your chat interface
-│   ├── dashboard.html       # 📊 NEW: File management dashboard
-│   └── script.js            # 🎤 Makes the mic and chat box work
+│   ├── index.html          
+│   ├── dashboard.html       
+│   └── script.js           
 └── data/
-    └── Your Documents/      # 📄 Your FAQ and policy files go here
+    └── Your Documents/      
 ```
 
 
-## 🚀 Getting Started (For Everyone)
+## Getting Started (For Everyone)
 
 This section helps both **non-technical and technical** members get it running.
 
@@ -140,7 +140,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ---
 
-## 🗃️ Managing Your Documents
+## Managing Your Documents
 
 ### **Easy File Upload**
 1. **Go to Dashboard:** Visit `/dashboard` in your browser
@@ -163,7 +163,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ---
 
-## ▶️ Run the Assistant (Production)
+## ▶Run the Assistant (Production)
 
 ```bash
 uvicorn api.main:app --reload
@@ -172,8 +172,8 @@ uvicorn api.main:app --reload
 Now open your browser and go to:
 
 ```
-http://localhost:8000          # 💬 Chat Interface
-http://localhost:8000/dashboard # 📊 File Management Dashboard
+http://localhost:8000          
+http://localhost:8000/dashboard 
 ```
 
 ### **Chat Interface Features:**
@@ -183,15 +183,15 @@ http://localhost:8000/dashboard # 📊 File Management Dashboard
 - Modern blue-themed interface
 
 ### **Dashboard Features:**
-- 📤 Upload new documents easily
-- 📋 View all uploaded files
-- 🗑️ Delete files when needed
-- 🔄 Refresh knowledge base manually
-- 📊 Monitor FAQ entry count
+-  Upload new documents easily
+- View all uploaded files
+- Delete files when needed
+- Refresh knowledge base manually
+- Monitor FAQ entry count
 
 ---
 
-## 🧪 Run for Testing (Developers Only)
+## Run for Testing (Developers Only)
 
 For CLI-based testing (no frontend), run:
 
@@ -201,7 +201,7 @@ python run.py
 
 ---
 
-## 🧠 API Endpoints (For Developers)
+## API Endpoints (For Developers)
 
 | Method | Endpoint                | Description                          |
 |--------|-------------------------|--------------------------------------|
@@ -218,7 +218,7 @@ python run.py
 
 ---
 
-## 🔄 Knowledge Base Management
+## Knowledge Base Management
 
 ### **Automatic Updates**
 - **Upload:** Knowledge base refreshes automatically after file upload
@@ -238,7 +238,7 @@ python run.py
 
 ---
 
-## 👩‍💻 Team Workflow (For Developers)
+## Team Workflow (For Developers)
 
 ```bash
 # Create a new feature branch
@@ -254,7 +254,7 @@ git push origin feature/my-task-name
 
 ---
 
-## 🛠️ Requirements
+## Requirements
 
 - Python 3.10+
 - Google API Key (for Gemini)
@@ -264,7 +264,7 @@ git push origin feature/my-task-name
 
 ---
 
-## 🔐 Security & Best Practices
+## Security & Best Practices
 
 - `.env` and key files are ignored in Git and must be set up manually
 - Voice input is rate-limited to prevent abuse
@@ -274,20 +274,20 @@ git push origin feature/my-task-name
 
 ---
 
-## 🚀 Recent Updates
+## Recent Updates
 
 ### **v2.0.0 - Enhanced File Management**
-- ✨ **New Dashboard:** Complete file management interface
-- 🔄 **Auto-refresh:** Knowledge base updates automatically
-- 🧠 **Smart Parsing:** Handles all document types intelligently
-- 📊 **Real-time Status:** Monitor knowledge base health
-- 🎨 **Modern UI:** Blue-themed, responsive design
+- **New Dashboard:** Complete file management interface
+- **Auto-refresh:** Knowledge base updates automatically
+- **Smart Parsing:** Handles all document types intelligently
+- **Real-time Status:** Monitor knowledge base health
+- **Modern UI:** Blue-themed, responsive design
 
 ### **v1.0.0 - Core Features**
-- 🎤 Voice input and output
-- 💬 Text-based chat interface
-- 🔍 RAG-powered question answering
-- ✨ Gemini AI enhancement
+- Voice input and output
+- Text-based chat interface
+- RAG-powered question answering
+- Gemini AI enhancement
 
 ---
 

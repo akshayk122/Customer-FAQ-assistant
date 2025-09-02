@@ -205,16 +205,12 @@ python run.py
 
 | Method | Endpoint                | Description                          |
 |--------|-------------------------|--------------------------------------|
-| POST   | `/api/ask-text`         | Ask a question via text              |
-| POST   | `/api/ask-audio`        | Ask a question via audio             |
-| POST   | `/api/ask-tts`          | Convert text to speech               |
-| POST   | `/api/ask-text-transcribe` | Just get a transcript from audio |
 | GET    | `/health`               | Check if backend is running          |
-| **NEW** | `/dashboard`            | File management dashboard            |
-| **NEW** | `/api/upload-file`      | Upload new documents                 |
-| **NEW** | `/api/files`            | List all uploaded files              |
-| **NEW** | `/api/files/{filename}` | Delete specific files                |
-| **NEW** | `/api/refresh`          | Manually refresh knowledge base      |
+| GET    | `/dashboard`            | File management dashboard            |
+| POST   | `/api/upload-file`      | Upload new documents                 |
+| GET    | `/api/files`            | List all uploaded files              |
+| DELETE | `/api/files/{filename}` | Delete specific files                |
+| POST   | `/api/refresh`          | Manually refresh knowledge base      |
 
 ---
 

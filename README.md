@@ -205,7 +205,7 @@ python run.py
 
 | Method | Endpoint                | Description                          |
 |--------|-------------------------|--------------------------------------|
-| GET    | `/health`               | Check if backend is running          |
+| GET    | `/health`               | Check if backend is up          |
 | GET    | `/dashboard`            | File management dashboard            |
 | POST   | `/api/upload-file`      | Upload new documents                 |
 | GET    | `/api/files`            | List all uploaded files              |

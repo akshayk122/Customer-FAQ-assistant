@@ -255,8 +255,7 @@ git push origin feature/my-task-name
 - Python 3.10+
 - Google API Key (for Gemini)
 - Google Cloud Service Account (for TTS/STT)
-- Web browser with microphone access
-- **NEW:** Modern web browser for dashboard features
+- Web browser for dashboard features
 
 ---
 
@@ -265,8 +264,8 @@ git push origin feature/my-task-name
 - `.env` and key files are ignored in Git and must be set up manually
 - Voice input is rate-limited to prevent abuse
 - No user data is stored or shared
-- **NEW:** File upload validation and type checking
-- **NEW:** Secure file handling with proper error handling
+- File upload validation and type checking
+- Secure file handling with proper error handling
 
 ---
 

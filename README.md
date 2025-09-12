@@ -1,4 +1,4 @@
-# AI Voice FAQ Assistant
+# AI-powered Voice FAQ Assistant
 
 This project is an **AI-powered Voice FAQ Assistant** that automatically reads your organization's documents and answers questions about them through voice or text chat.
 

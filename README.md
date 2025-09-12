@@ -140,7 +140,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ---
 
-## Managing Your Documents
+## Manage Your Documents
 
 ### **Easy File Upload**
 1. **Go to Dashboard:** Visit `/dashboard` in your browser

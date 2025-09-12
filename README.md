@@ -27,7 +27,7 @@ Whether you're a **developer**, a **non-technical team member**, or a **project 
 - Automatically scan `.docx`, `.pdf`, `.txt`, `.csv`, and `.json` documents
 - Find the best answer using vector search (semantic similarity)
 - Speak the answer back using natural-sounding voice
-- Make the response more human-like using Gemini AI (Google)
+- Make the response more human-like using Gemini
 - File management dashboard for easy document uploads
 - Automatic knowledge base updates when files change
 - Smart content parsing for both Q&A and policy documents

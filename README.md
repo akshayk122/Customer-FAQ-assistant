@@ -163,7 +163,7 @@ This is needed for voice-to-text and text-to-voice features.
 
 ---
 
-## ▶Run the Assistant (Production)
+## Run the Assistant (Production)
 
 ```bash
 uvicorn api.main:app --reload

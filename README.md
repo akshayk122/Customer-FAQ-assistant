@@ -15,7 +15,7 @@ This project is an **AI-powered Voice FAQ Assistant** that automatically reads y
 - **Training Departments** - Help new employees learn company procedures
 - **Any Organization** - Make your documentation easily accessible
 
-The system uses **Google's AI (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings to understand your content and provide intelligent responses.
+The system uses **Google's (Gemini)** and **open-source tools** like FastAPI, LlamaIndex, and HuggingFace embeddings to understand your content and provide intelligent responses.
 
 Whether you're a **developer**, a **non-technical team member**, or a **project lead**, this assistant makes your organization's knowledge instantly accessible to everyone.
 
